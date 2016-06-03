@@ -18,40 +18,40 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+------| +L1  |           | +L1  |------+------+------+------+------+--------|
  * | LShift |   Z  |   X  |   C  |   V  |   B  |      |           |      |   N  |   M  |   ,  |   .  |   /  | RShift |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
- *   | LGui |   `  |   \  | Left | Right|                                       | Down |  Up  |   [  |   ]  |  RGui  |
+ *   | LGui | Left | Right|   `  |   \  |                                       |   [  |   ]  | Down |  Up  |  RGui  |
  *   `----------------------------------'                                       `------------------------------------'
  *                                        ,-------------.       ,-------------.
- *                                        | Tab  | LAlt |       | RAlt | Ent  |
+ *                                        | Tab  | Ent  |       | Ent  | Tab  |
  *                                 ,------|------|------|       |------+------+------.
  *                                 |      |      | Esc  |       | PgUp |      |      |
- *                                 | Space| LGui |------|       |------| RGui |Backsp|
- *                                 |      |      | Esc  |       | PgDn |      |      |
+ *                                 | LGui | Space|------|       |------|Backsp| RGui |
+ *                                 |      |      | LAlt |       | PgDn |      |      |
  *                                 `--------------------'       `--------------------'
  */
 // If it accepts an argument (i.e, is a function), it doesn't need KC_.
 // Otherwise, it needs KC_*
 [L_BASE] = KEYMAP(  // layer 0 : default
         // left hand
-        KC_ESCAPE,  KC_1,     KC_2,      KC_3,    KC_4,    KC_5,     KC_6,
-        KC_BSLASH,  KC_Q,     KC_W,      KC_E,    KC_R,    KC_T,     TG(L_SYST),
-        KC_LCTRL,   KC_A,     KC_S,      KC_D,    KC_F,    KC_G,
-        KC_LSHIFT,  KC_Z,     KC_X,      KC_C,    KC_V,    KC_B,     TG(L_FUNC),
-        KC_LGUI,    KC_GRAVE, KC_BSLASH, KC_LEFT, KC_RGHT,
+        KC_ESCAPE,  KC_1,     KC_2,     KC_3,     KC_4,    KC_5,     KC_6,
+        KC_BSLASH,  KC_Q,     KC_W,     KC_E,     KC_R,    KC_T,     TG(L_SYST),
+        KC_LCTRL,   KC_A,     KC_S,     KC_D,     KC_F,    KC_G,
+        KC_LSHIFT,  KC_Z,     KC_X,     KC_C,     KC_V,    KC_B,     TG(L_FUNC),
+        KC_LGUI,    KC_LEFT,  KC_RGHT,  KC_GRAVE, KC_BSLASH,
 
-                                                           KC_TAB,   KC_ENT,
-                                                                     KC_ESCAPE,
-                                                  KC_SPC,  KC_LGUI,  KC_ESCAPE,
+                                                          KC_TAB,   KC_ENT,
+                                                                    KC_ESCAPE,
+                                                 KC_LGUI, KC_SPC,   KC_LALT,
 
         // right hand
-        KC_5,       KC_6,     KC_7,      KC_8,    KC_9,    KC_0,      KC_MINS,
-        TG(L_SYST), KC_Y,     KC_U,      KC_I,    KC_O,    KC_P,      KC_EQUAL,
-                    KC_H,     KC_J,      KC_K,    KC_L,    KC_SCOLON, KC_QUOTE,
-        TG(L_FUNC), KC_N,     KC_M,      KC_COMM, KC_DOT,  KC_SLSH,   KC_RSFT,
-                              KC_DOWN,   KC_UP,   KC_LBRC, KC_RBRC,   KC_RGUI,
+        KC_5,       KC_6,     KC_7,     KC_8,    KC_9,    KC_0,      KC_MINS,
+        TG(L_SYST), KC_Y,     KC_U,     KC_I,    KC_O,    KC_P,      KC_EQUAL,
+                    KC_H,     KC_J,     KC_K,    KC_L,    KC_SCOLON, KC_QUOTE,
+        TG(L_FUNC), KC_N,     KC_M,     KC_COMM, KC_DOT,  KC_SLSH,   KC_RSFT,
+                              KC_LBRC,  KC_RBRC, KC_DOWN, KC_UP,     KC_RGUI,
 
-        KC_LALT,    KC_ENT,
+        KC_ENT,     KC_TAB,
         KC_PGUP,
-        KC_PGDN,    KC_RGUI,  KC_BSPC
+        KC_PGDN,    KC_BSPC,  KC_RGUI
     ),
 /* Keymap 1: Function Layer
  *
