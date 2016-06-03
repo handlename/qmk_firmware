@@ -12,7 +12,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,--------------------------------------------------.           ,--------------------------------------------------.
  * | Esc    |   1  |   2  |   3  |   4  |   5  |  6   |           |  5   |   6  |   7  |   8  |   9  |   0  |   -    |
  * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
- * | \      |   Q  |   W  |   E  |   R  |   T  | +L2  |           | +L2  |   Y  |   U  |   I  |   O  |   P  |   =    |
+ * | Tab    |   Q  |   W  |   E  |   R  |   T  | +L2  |           | +L2  |   Y  |   U  |   I  |   O  |   P  |   =    |
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
  * | LCtrl  |   A  |   S  |   D  |   F  |   G  |------|           |------|   H  |   J  |   K  |   L  |   ;  |   '    |
  * |--------+------+------+------+------+------| +L1  |           | +L1  |------+------+------+------+------+--------|
@@ -33,7 +33,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [L_BASE] = KEYMAP(  // layer 0 : default
         // left hand
         KC_ESCAPE,  KC_1,     KC_2,     KC_3,     KC_4,    KC_5,     KC_6,
-        KC_BSLASH,  KC_Q,     KC_W,     KC_E,     KC_R,    KC_T,     TG(L_SYST),
+        KC_TAB,     KC_Q,     KC_W,     KC_E,     KC_R,    KC_T,     TG(L_SYST),
         KC_LCTRL,   KC_A,     KC_S,     KC_D,     KC_F,    KC_G,
         KC_LSHIFT,  KC_Z,     KC_X,     KC_C,     KC_V,    KC_B,     TG(L_FUNC),
         KC_LGUI,    KC_LEFT,  KC_RGHT,  KC_GRAVE, KC_BSLASH,
