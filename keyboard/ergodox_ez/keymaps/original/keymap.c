@@ -18,7 +18,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+------| +L1  |           | +L1  |------+------+------+------+------+--------|
  * | LShift |   Z  |   X  |   C  |   V  |   B  |      |           |      |   N  |   M  |   ,  |   .  |   /  | RShift |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
- *   | LGui | Left | Right|   `  |   \  |                                       |   [  |   ]  | Down |  Up  |  RGui  |
+ *   | LAlt | Left | Right|   `  |   \  |                                       |   [  |   ]  | Down |  Up  |  RAlt  |
  *   `----------------------------------'                                       `------------------------------------'
  *                                        ,-------------.       ,-------------.
  *                                        | Tab  | Ent  |       | Ent  | Tab  |
@@ -36,7 +36,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_TAB,     KC_Q,     KC_W,     KC_E,     KC_R,    KC_T,     TG(L_SYST),
         KC_LCTRL,   KC_A,     KC_S,     KC_D,     KC_F,    KC_G,
         KC_LSHIFT,  KC_Z,     KC_X,     KC_C,     KC_V,    KC_B,     TG(L_FUNC),
-        KC_LGUI,    KC_LEFT,  KC_RGHT,  KC_GRAVE, KC_BSLASH,
+        KC_LALT,    KC_LEFT,  KC_RGHT,  KC_GRAVE, KC_BSLASH,
 
                                                           KC_TAB,   KC_ENT,
                                                                     KC_ESCAPE,
@@ -47,7 +47,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         TG(L_SYST), KC_Y,     KC_U,     KC_I,    KC_O,    KC_P,      KC_EQUAL,
                     KC_H,     KC_J,     KC_K,    KC_L,    KC_SCOLON, KC_QUOTE,
         TG(L_FUNC), KC_N,     KC_M,     KC_COMM, KC_DOT,  KC_SLSH,   KC_RSFT,
-                              KC_LBRC,  KC_RBRC, KC_DOWN, KC_UP,     KC_RGUI,
+                              KC_LBRC,  KC_RBRC, KC_DOWN, KC_UP,     KC_RALT,
 
         KC_ENT,     KC_TAB,
         KC_PGUP,
