@@ -24,7 +24,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                                        | Home | Ent  |       | PgUp | PgDn |
  *                                 ,------|------|------|       |------+------+------.
  *                                 |      |      | Tab  |       | Tab  |      |      |
- *                                 | LGui | Space|------|       |------|Backsp| RGui |
+ *                                 | LGui | Space|------|       |------|Sft/Bs| RGui |
  *                                 |      |      | Esc  |       | Ent  |      |      |
  *                                 `--------------------'       `--------------------'
  */
@@ -51,7 +51,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
         KC_PGUP,    KC_PGDN,
         KC_TAB,
-        KC_ENT,     KC_BSPC,  KC_RGUI
+        KC_ENT,     SFT_T(KC_BSPC),  KC_RGUI
     ),
 /* Keymap 1: Function Layer
  *
