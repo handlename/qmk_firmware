@@ -3,16 +3,17 @@
 #include "action_layer.h"
 
 #define L_BASE 0 // base layer
-#define L_MOUS 1 // mouse & cursor layer
-#define L_SYST 2 // system layer
+#define L_SYMB 1 // symbol layer
+#define L_MOUS 2 // mouse & cursor layer
+#define L_SYST 3 // system layer
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Keymap 0: Base layer
  *
  * ,--------------------------------------------------.           ,--------------------------------------------------.
- * | Esc    |   1  |   2  |   3  |   4  |   5  | +L2  |           | +L2  |   6  |   7  |   8  |   9  |   0  |   -    |
+ * | `      |   1  |   2  |   3  |   4  |   5  | +L3  |           | +L3  |   6  |   7  |   8  |   9  |   0  |   -    |
  * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
- * | Tab    |   Q  |   W  |   E  |   R  |   T  | +L1  |           | +L1  |   Y  |   U  |   I  |   O  |   P  |   =    |
+ * | Tab    |   Q  |   W  |   E  |   R  |   T  | +L2  |           | +L2  |   Y  |   U  |   I  |   O  |   P  |   [    |
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
  * | LCtrl  |   A  |   S  |   D  |   F  |   G  |------|           |------|   H  |   J  |   K  |   L  |   ;  |   '    |
  * |--------+------+------+------+------+------| Esc  |           | Ent  |------+------+------+------+------+--------|
@@ -23,37 +24,79 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                                        ,-------------.       ,-------------.
  *                                        | Home | End  |       | PgUp | PgDn |
  *                                 ,------|------|------|       |------+------+------.
- *                                 |      |      | Tab  |       | Tab  |      |      |
+ *                                 |      |      | LAlt |       | RAlt |      |      |
  *                                 | LGui | Space|------|       |------|Sft/Bs| RGui |
- *                                 |      |      | Alt  |       | Alt  |      |      |
+ *                                 |      |      | +L1  |       | +L1  |      |      |
  *                                 `--------------------'       `--------------------'
  */
-// If it accepts an argument (i.e, is a function), it doesn't need KC_.
-// Otherwise, it needs KC_*
-[L_BASE] = KEYMAP(  // layer 0 : default
+[L_BASE] = KEYMAP(
         // left hand
-        KC_ESCAPE,  KC_1,     KC_2,     KC_3,     KC_4,     KC_5,      MO(L_SYST),
+        KC_GRAVE,   KC_1,     KC_2,     KC_3,     KC_4,     KC_5,      MO(L_SYST),
         KC_TAB,     KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,      MO(L_MOUS),
         KC_LCTRL,   KC_A,     KC_S,     KC_D,     KC_F,     KC_G,
         KC_LSHIFT,  KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,      KC_ESCAPE,
         KC_LALT,    KC_LEFT,  KC_RGHT,  KC_GRAVE, KC_BSLASH,
 
                                                             KC_HOME,   KC_END,
-                                                                       KC_TAB,
-                                                  KC_LGUI,  KC_SPC,    KC_LALT,
+                                                                       KC_LALT,
+                                                  KC_LGUI,  KC_SPC,    MO(L_SYMB),
 
         // right hand
         MO(L_SYST), KC_6,     KC_7,     KC_8,     KC_9,     KC_0,      KC_MINS,
-        MO(L_MOUS), KC_Y,     KC_U,     KC_I,     KC_O,     KC_P,      KC_EQUAL,
+        MO(L_MOUS), KC_Y,     KC_U,     KC_I,     KC_O,     KC_P,      KC_LBRC,
                     KC_H,     KC_J,     KC_K,     KC_L,     KC_SCOLON, KC_QUOTE,
         KC_ENTER,   KC_N,     KC_M,     KC_COMM,  KC_DOT,   KC_SLSH,   KC_RSFT,
                               KC_LBRC,  KC_RBRC,  KC_DOWN,  KC_UP,     KC_RALT,
 
         KC_PGUP,    KC_PGDN,
-        KC_TAB,
-        KC_RALT,    SFT_T(KC_BSPC),  KC_RGUI
+        KC_RALT,
+        MO(L_SYMB), SFT_T(KC_BSPC),  KC_RGUI
     ),
-/* Keymap 1: Mouse & Cursor Layer
+/* Keymap 1: Symbol Layer
+ *
+ * ,--------------------------------------------------.           ,--------------------------------------------------.
+ * |    *   |      |      |      |      |      |  *   |           |  *   |      |      |      |      |      |    =   |
+ * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
+ * |        |      |      |      |      |      |  *   |           |  *   |      |      |      |      |      |    ]   |
+ * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
+ * |        |      |      |      |      |      |------|           |------|      |      |      |      |      |    \   |
+ * |--------+------+------+------+------+------|  *   |           |  *   |------+------+------+------+------+--------|
+ * |    *   |      |      |      |      |      |      |           |      |      |      |      |      |      |    *   |
+ * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
+ *   |   *  |      |      |      |      |                                       |      |      |      |      |   *  |
+ *   `----------------------------------'                                       `----------------------------------'
+ *                                        ,-------------.       ,-------------.
+ *                                        |  *   |  *   |       |   *  |   *  |
+ *                                 ,------|------|------|       |------+------+------.
+ *                                 |      |      |  *   |       |   *  |      |      |
+ *                                 |  *   |  *   |------|       |------|   *  |   *  |
+ *                                 |      |      |  *   |       |   *  |      |      |
+ *                                 `--------------------'       `--------------------'
+ */
+[L_SYMB] = KEYMAP(
+    // left hand
+    KC_TRNS, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_TRNS,
+    KC_TRNS, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_TRNS,
+    KC_TRNS, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
+    KC_TRNS, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_TRNS,
+    KC_TRNS, KC_NO,   KC_NO,   KC_NO,   KC_NO,
+
+                                        KC_TRNS, KC_TRNS,
+                                        KC_TRNS,
+                                        KC_TRNS, KC_TRNS, KC_TRNS,
+
+    // right hand
+    KC_TRNS, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_EQUAL,
+    KC_TRNS, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_RBRC,
+             KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_BSLASH,
+    KC_TRNS, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_TRNS,
+    KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_TRNS,
+
+    KC_TRNS, KC_TRNS,
+    KC_TRNS,
+    KC_TRNS, KC_TRNS, KC_TRNS
+),
+/* Keymap 2: Mouse & Cursor layer
  *
  * ,--------------------------------------------------.           ,--------------------------------------------------.
  * |    *   |      |      |      |      |      |  *   |           |  *   |      |      |      |      |      |        |
@@ -74,7 +117,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                                 |      |      |  *   |       |   *  |      |      |
  *                                 `--------------------'       `--------------------'
  */
-// Mouse & Cursor keys
 [L_MOUS] = KEYMAP(
        // left hand
        KC_TRNS, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_TRNS,
@@ -97,8 +139,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        KC_TRNS, KC_TRNS,
        KC_TRNS,
        KC_TRNS, KC_TRNS, KC_TRNS
-),
-/* Keymap 2: System Layer
+    ),
+/* Keymap 3: System Layer
  *
  * ,--------------------------------------------------.           ,--------------------------------------------------.
  * |        |      |      |      |      |      |  *   |           |  *   |      |      |      |      |      |        |
@@ -116,10 +158,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                                 ,------|------|------|       |------+------+------.
  *                                 |      |      |      |       |      |      |      |
  *                                 |      |      |------|       |------|      |      |
- *                                 |      |      |      |       |      |      |      |
+ *                                 |      |      |  *   |       |  *   |      |      |
  *                                 `--------------------'       `--------------------'
  */
-// System keys
 [L_SYST] = KEYMAP(
        // left hand
        KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_TRNS,
@@ -130,7 +171,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
                                                     KC_NO,   KC_NO,
                                                              KC_NO,
-                                           KC_NO,   KC_NO,   KC_NO,
+                                           KC_NO,   KC_NO,   KC_TRNS,
        // right hand
        KC_TRNS, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
        KC_TRNS, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
@@ -140,13 +181,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
        KC_NO,   KC_NO,
        KC_NO,
-       KC_NO,   KC_NO,   KC_WBAK
+       KC_TRNS, KC_NO,   KC_NO
 ),
 };
 
 const uint16_t PROGMEM fn_actions[] = {
     [1] = ACTION_LAYER_TAP_TOGGLE(L_MOUS),
-    [2] = ACTION_LAYER_TAP_TOGGLE(L_SYST)
+    [2] = ACTION_LAYER_TAP_TOGGLE(L_SYMB),
+    [3] = ACTION_LAYER_TAP_TOGGLE(L_SYST)
 };
 
 const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
