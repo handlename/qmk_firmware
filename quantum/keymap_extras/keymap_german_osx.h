@@ -1,10 +1,22 @@
+/* Copyright 2016 Stephen Bösebeck
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
 #ifndef KEYMAP_GERMAN_OSX
 #define KEYMAP_GERMAN_OSX
 
-#ifdef KEYMAP_GERMAN
-	#warning redefining german keys
-#endif
-#include "keymap_common.h"
+#include "keymap.h"
 
 // Alt gr
 
@@ -85,8 +97,8 @@
 #define DE_OSX_UNDS LSFT(DE_OSX_MINS) // _
 
 // Alt-ed characters
-#define DE_OSX_SQ2 LALT(KC_2) // ²
-#define DE_OSX_SQ3 LALT(KC_3) // ³
+//#define DE_OSX_SQ2 LALT(KC_2) // ²
+//#define DE_OSX_SQ3 LALT(KC_3) // ³
 #define DE_OSX_LCBR LALT(KC_8) // {
 #define DE_OSX_LBRC LALT(KC_5) // [
 #define DE_OSX_RBRC LALT(KC_6) // ]
