@@ -17,10 +17,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      KC_TAB ,KC_QUOT,KC_COMM,KC_DOT ,KC_P   ,KC_Y   ,                        KC_F   ,KC_G   ,KC_K   ,KC_R   ,KC_L   ,KC_SLSH,
      KC_LCTL,KC_A   ,KC_O   ,KC_E   ,KC_U   ,KC_I   ,                        KC_D   ,KC_H   ,KC_T   ,KC_N   ,KC_S   ,KC_MINS,
      KC_LSFT,KC_SCLN,KC_Q   ,KC_J   ,KC_C   ,KC_X   ,                        KC_B   ,KC_M   ,KC_W   ,KC_V   ,KC_Z   ,KC_RSFT,
-                     KC_F5  ,KC_F9  ,                                                        KC_F10 ,KC_F11 ,
+                     KC_LEFT,KC_RGHT,                                                        KC_DOWN,KC_UP  ,
                                              KC_LGUI,KC_SPC ,        KC_BSPC,KC_RGUI,
-                                             RAISE  ,LOWER  ,        LOWER  ,RAISE  ,
-                                             KC_ESC ,KC_LALT,        KC_RALT,KC_ENT
+                                   LT(RAISE, KC_ESC),LOWER  ,        LOWER  ,LT(RAISE, KC_ENT),
+                                             KC_LALT,XXXXXXX,        XXXXXXX,KC_RALT
   ),
 
   [_RAISE] = LAYOUT_5x6(
