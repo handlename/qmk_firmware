@@ -1,1 +1,1 @@
-https://configure.ergodox-ez.com/ergodox-ez/layouts/RlXwP/latest/0
+https://configure.ergodox-ez.com/ergodox-ez/layouts/rPl6l/latest/0
