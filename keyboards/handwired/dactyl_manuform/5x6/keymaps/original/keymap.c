@@ -21,8 +21,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      KC_LSFT,KC_SCLN,KC_Q   ,KC_J   ,KC_C   ,KC_X   ,                        KC_B   ,KC_M   ,KC_W   ,KC_V   ,KC_Z   ,QWERTY ,
                      KC_LEFT,KC_RGHT,                                                        KC_DOWN,KC_UP  ,
                                              KC_LGUI,KC_SPC ,        KC_BSPC,KC_RGUI,
-                                   LT(RAISE, KC_ESC),LOWER  ,        LOWER  ,LT(RAISE, KC_ENT),
-                                             KC_LALT,KC_ESC ,        KC_ENT ,KC_RALT
+                                   LT(RAISE, KC_ESC),XXXXXXX,        XXXXXXX,LT(RAISE, KC_ENT),
+                                             KC_LALT,LOWER  ,        LOWER  ,KC_RALT
   ),
 
   [_RAISE] = LAYOUT_5x6(
