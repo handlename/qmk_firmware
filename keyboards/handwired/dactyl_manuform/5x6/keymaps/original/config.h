@@ -18,7 +18,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #pragma once
 
-
 #define USE_SERIAL
 //#define USE_I2C
 
@@ -26,3 +25,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define MASTER_RIGHT
 //#define EE_HANDS
 // Rows are doubled-up
+
+#define TAPPING_TERM 200
+#define COMBO_COUNT 1
+#define COMPO_TERM 200

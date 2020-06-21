@@ -2,6 +2,7 @@
 
 #include QMK_KEYBOARD_H
 
+// LAYERS
 
 #define _BASE 0
 #define _LOWER 1
@@ -12,7 +13,22 @@
 #define LOWER MO(_LOWER)
 #define GAMING TG(_GAMING)
 
+// KEY MACROS
+
 #define MT_SNS MT(MOD_LSFT, KC_SPACE) // SandS
+
+// KEY COMBO
+
+typedef const uint16_t comb_keys_t[];
+
+static PROGMEM comb_keys_t
+  comb_keys_ECS = {KC_H, KC_T, COMBO_END};
+
+combo_t key_combos[COMBO_COUNT] = {
+  COMBO(comb_keys_ECS, KC_ESC),
+};
+
+// KEY MAPS
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
