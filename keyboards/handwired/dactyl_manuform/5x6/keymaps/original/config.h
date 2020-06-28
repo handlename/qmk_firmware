@@ -29,3 +29,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define TAPPING_TERM 200
 #define COMBO_COUNT 1
 #define COMBO_TERM 100
+
+// RGB LED
+#define RGB_DI_PIN D3
+#define RGBLED_NUM 12
+#define RGBLED_SPLIT {12, 0}
