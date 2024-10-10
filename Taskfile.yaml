@@ -1,0 +1,21 @@
+version: '3'
+
+tasks:
+  default:
+    deps:
+      - build-atreus62-original
+
+  build-*-*:
+    vars:
+      KEYBOARD: '{{index .MATCH 0}}'
+      LAYOUT: '{{index .MATCH 1}}'
+    sources:
+      - 'keyboards/{{.KEYBOARD}}/keymaps/{{.LAYOUT}}/*'
+    generates:
+      - '{{.KEYBOARD}}_{{.LAYOUT}}.hex'
+    cmds:
+      - 'qmk compile -kb {{.KEYBOARD}} -km {{.LAYOUT}}'
+
+  clean:
+    cmds:
+      - rm -r *.hex
