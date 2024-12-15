@@ -78,24 +78,3 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                              _______,_______,        _______,_______
   ),
 };
-
-// RGB LED
-
-void keyboard_post_init_user(void) {
-    rgblight_disable();
-}
-
-layer_state_t layer_state_set_user(layer_state_t state) {
-    switch (get_highest_layer(state)) {
-        case _GAMING:
-            dprintf("_GAMING!!");
-            rgblight_enable();
-            break;
-        default:
-            dprintf("DEFAULT!!");
-            rgblight_disable();
-            break;
-    }
-
-    return state;
-}
