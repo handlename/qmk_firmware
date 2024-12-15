@@ -480,3 +480,12 @@ pytest:
 .PHONY: format-and-pytest
 format-and-pytest:
 	RUNTIME=docker ./util/docker_cmd.sh bash -lic "$(CONTAINER_PREAMBLE); qmk format-c --core-only -a && qmk format-python -a && qmk pytest"
+
+my/atreus62:
+	$(MAKE) atreus62:original
+
+my/dactyl_manuform:
+	$(MAKE) handwired/dactyl_manuform/5x6:original
+
+my/ergodox_ez:
+	$(MAKE) ergodox_ez:original
