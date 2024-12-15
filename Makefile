@@ -481,6 +481,8 @@ pytest:
 format-and-pytest:
 	RUNTIME=docker ./util/docker_cmd.sh bash -lic "$(CONTAINER_PREAMBLE); qmk format-c --core-only -a && qmk format-python -a && qmk pytest"
 
+my/all: my/atreus62 my/dactyl_manuform my/ergodox_ez
+
 my/atreus62:
 	$(MAKE) atreus62:original
 
