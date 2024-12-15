@@ -8,9 +8,11 @@
 #define _BASE 0
 #define _LOWER 1
 #define _RAISE 2
+#define _GAMING 3
 
 #define RAISE MO(_RAISE)
 #define LOWER MO(_LOWER)
+#define GAMING TG(_GAMING)
 
 // KEY MACROS
 
@@ -30,7 +32,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TAB,  KC_QUOT, KC_COMM, KC_DOT,  KC_P,    KC_Y,                                         KC_F,    KC_G,    KC_K,    KC_R,    KC_L,    KC_SLSH ,
     KC_LCTL, KC_A,    KC_O,    KC_E,    KC_U,    KC_I,                                         KC_D,    KC_H,    KC_T,    KC_N,    KC_S,    KC_MINS ,
     KC_LSFT, KC_SCLN, KC_Q,    KC_J,    KC_C,    KC_X,                                         KC_B,    KC_M,    KC_W,    KC_V,    KC_Z,    KC_RSFT ,
-    LOWER,   XXXXXXX, KC_LEFT, KC_RGHT, KC_LGUI, MT_SNS, LT(RAISE, KC_ESC), LT(RAISE, KC_ENT), MT_RNB,  KC_RGUI, KC_DOWN, KC_UP,   XXXXXXX, LOWER
+    LOWER,   XXXXXXX, KC_LEFT, KC_RGHT, KC_LGUI, MT_SNS, LT(RAISE, KC_ESC), LT(RAISE, KC_ENT), MT_RNB,  KC_RGUI, KC_DOWN, KC_UP,   XXXXXXX, GAMING
   ),
 
   [_RAISE] = LAYOUT(
@@ -47,5 +49,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______,_______,KC_LEFT,KC_DOWN,KC_RGHT,KC_BRID,                 KC_BRIU,KC_P4  ,KC_P5  ,KC_P6  ,_______,_______,
     _______,_______,_______,_______,_______,_______,                 _______,KC_P7  ,KC_P8  ,KC_P9  ,_______,_______,
     _______,_______,_______,_______,_______,_______,_______, _______,_______,_______,_______,_______,_______,QK_BOOT
+  ),
+
+  [_GAMING] = LAYOUT(
+    _______,_______,_______,_______,_______,_______,                _______,_______,_______,_______,_______,_______,
+    KC_T   ,KC_TAB ,KC_Q   ,KC_W   ,KC_E   ,KC_R   ,                KC_Y   ,KC_U   ,KC_I   ,KC_O   ,KC_P   ,_______,
+    KC_G   ,KC_LCTL,KC_A   ,KC_S   ,KC_D   ,KC_F   ,                KC_H   ,KC_J   ,KC_K   ,KC_L   ,KC_COLN,_______,
+    KC_B   ,KC_LSFT,KC_Z   ,KC_X   ,KC_C   ,KC_V   ,                KC_N   ,KC_M   ,KC_COMM,KC_DOT ,KC_SLSH,_______,
+    _______,_______,_______,_______,XXXXXXX,KC_SPC ,_______,_______,_______,XXXXXXX,_______,_______,_______,_______
   )
 };
