@@ -21,7 +21,7 @@
 
 // KEY COMBO
 
-const uint16_t PROGMEM ecs_combo[] = {KC_H, KC_T, COMBO_END};
+const uint16_t PROGMEM ecs_combo[] = {KC_T, KC_N, COMBO_END};
 combo_t key_combos[] = {
   COMBO(ecs_combo, KC_ESC),
 };
@@ -32,7 +32,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TAB,  KC_QUOT, KC_COMM, KC_DOT,  KC_P,    KC_Y,                                         KC_F,    KC_G,    KC_K,    KC_R,    KC_L,    KC_SLSH ,
     KC_LCTL, KC_A,    KC_O,    KC_E,    KC_U,    KC_I,                                         KC_D,    KC_H,    KC_T,    KC_N,    KC_S,    KC_MINS ,
     KC_LSFT, KC_SCLN, KC_Q,    KC_J,    KC_C,    KC_X,                                         KC_B,    KC_M,    KC_W,    KC_V,    KC_Z,    KC_RSFT ,
-    LOWER,   KC_F13,  KC_LEFT, KC_RGHT, KC_LGUI, MT_SNS, LT(RAISE, KC_ESC), LT(RAISE, KC_ENT), MT_RNB,  KC_RGUI, KC_DOWN, KC_UP,   KC_F14,  GAMING
+    LOWER,   KC_F13,  KC_LEFT, KC_RGHT, KC_LGUI, MT_SNS, LT(RAISE, KC_ESC), LT(RAISE, KC_ENT), MT_RNB,  KC_RGUI, KC_DOWN, KC_UP,   KC_F14,  LOWER
   ),
 
   [_RAISE] = LAYOUT(
