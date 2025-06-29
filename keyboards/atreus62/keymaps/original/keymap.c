@@ -19,7 +19,7 @@
 #define MT_SNS MT(MOD_LSFT, KC_SPACE) // SandS
 #define MT_RNB MT(MOD_LALT, KC_BSPC)
 
-// KEY COMBO
+// KEY COMBOS
 
 combo_t key_combos[] = {
 };
