@@ -21,10 +21,10 @@
 
 // KEY COMBO
 
-const uint16_t PROGMEM ecs_combo[] = {KC_T, KC_N, COMBO_END};
 combo_t key_combos[] = {
-  COMBO(ecs_combo, KC_ESC),
 };
+
+// LAYOUTS
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_BASE] = LAYOUT( /* dvorak+ */
